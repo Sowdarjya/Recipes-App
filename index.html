@@ -21,9 +21,45 @@
         color: #afdde5;
         padding: 0.5rem;
       }
+
+      .container {
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(to top right, #024950 20%, #0fa4af);
+      }
+
+      .container input {
+        width: 15rem;
+        padding: 0.4rem;
+        margin: 0.6rem;
+        border: none;
+        outline: none;
+        border-radius: 0.7rem;
+        font-size: 0.9rem;
+      }
+
+      #search-btn {
+        background: #964734;
+        border: none;
+        outline: none;
+        padding: 0.4rem;
+        font-size: 0.9rem;
+        border-radius: 0.7rem;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
     <header>Recipes Refocused.</header>
+
+    <div class="container">
+      <input type="text" placeholder="Enter name of the dish" />
+      <button id="search-btn">Search</button>
+
+      <div class="items"></div>
+
+      <script src="app.js"></script>
+    </div>
   </body>
 </html>
