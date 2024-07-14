@@ -17,6 +17,7 @@ async function fetchData(query) {
     <h3>${element.strMeal}</h3>
     <h4>${element.strArea}</h4>
     <p>Category: ${element.strCategory}</p>
+    <button>Learn More</button>
     `;
     recipeList.appendChild(recipe);
   });
