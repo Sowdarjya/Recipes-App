@@ -5,10 +5,15 @@ const recipeDescription = document.querySelector(".recipes");
 const ingredientsList = document.createElement("ul");
 const instructions = document.createElement("p");
 
+function closePopUp() {
+  recipeDescription.style.display = "none";
+}
+
 function recipePopUp(element) {
   ingredientsList.innerHTML = "";
   instructions.innerHTML = "";
   recipeDescription.innerHTML = `
+  <div class="btn-container"><div><button onclick=closePopUp()>x</button></div></div>
   <h2>${element.strMeal}</h2>
   <h3>Ingredients required</h3>`;
   for (let i = 1; i <= 20; i++) {

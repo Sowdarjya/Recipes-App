@@ -56,14 +56,14 @@ header {
 .items .item {
   width: 90%;
   height: 100%;
-  /* background: #964734; */
-  padding: 1rem;
+  background: linear-gradient(45deg, #30c5d2, #471069);
+  padding: 0.7rem;
   border-radius: 2rem;
   box-shadow: 0.3rem 0.3rem 1.3rem #000000;
 }
 .items .item img {
   height: 13rem;
-  width: 17rem;
+  width: 100%;
   border-radius: 2rem;
 }
 .items .item h3 {
@@ -94,23 +94,21 @@ header {
 .recipes {
   height: 450px;
   width: 500px;
-  background: linear-gradient(120deg, #243748, #4b749f);
+  background: linear-gradient(120deg, #233d52, #2a454b, #0e1c26);
   position: absolute;
-  top: 95px;
-  left: 381px;
+  top: 10%;
+  left: 30%;
   display: none;
   border-radius: 2rem;
   padding: 2rem;
   overflow-y: scroll;
+  text-align: left;
 }
 .recipes::-webkit-scrollbar {
   display: none;
 }
 .recipes p {
   color: #fff;
-}
-.items .item {
-  background: linear-gradient(45deg, #30c5d2, #471069);
 }
 .recipes h2 {
   text-transform: uppercase;
@@ -127,4 +125,17 @@ header {
 }
 .recipes ul li {
   color: #fff;
+}
+.recipes .btn-container {
+  display: block;
+  text-align: right;
+}
+.recipes .btn-container button {
+  color: #f74d4d;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5rem;
 }
