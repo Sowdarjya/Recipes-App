@@ -26,7 +26,6 @@ function recipePopUp(element) {
   instructions.textContent = `${element.strInstructions}`;
   recipeDescription.appendChild(h3);
   recipeDescription.appendChild(instructions);
-  console.log(ingredientsList);
   recipeDescription.style.display = "block";
 }
 
@@ -37,7 +36,6 @@ async function fetchData(query) {
   let response = await data.json();
   recipeList.innerHTML = "";
   response.meals.forEach((element) => {
-    console.log(element);
     const recipe = document.createElement("div");
     recipe.classList.add("item");
     recipe.innerHTML = `
