@@ -51,15 +51,12 @@ async function fetchData(query) {
         <h4>${element.strArea}</h4>
         <p>Category: ${element.strCategory}</p>
         `;
-
         const btn = document.createElement("button");
         recipe.appendChild(btn);
         btn.textContent = "Check recipe";
-
         btn.addEventListener("click", () => {
           recipePopUp(element);
         });
-
         recipeList.appendChild(recipe);
       });
     } else {
