@@ -35,31 +35,40 @@ function recipePopUp(element) {
 }
 
 async function fetchData(query) {
-  let data = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
-  );
-  let response = await data.json();
-  recipeList.innerHTML = "";
-  response.meals.forEach((element) => {
-    const recipe = document.createElement("div");
-    recipe.classList.add("item");
-    recipe.innerHTML = `
-    <img src=${element.strMealThumb}>
-    <h3>${element.strMeal}</h3>
-    <h4>${element.strArea}</h4>
-    <p>Category: ${element.strCategory}</p>
-    `;
+  try {
+    let data = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
+    );
+    let response = await data.json();
+    recipeList.innerHTML = "";
+    if (response.meals) {
+      response.meals.forEach((element) => {
+        const recipe = document.createElement("div");
+        recipe.classList.add("item");
+        recipe.innerHTML = `
+        <img src=${element.strMealThumb}>
+        <h3>${element.strMeal}</h3>
+        <h4>${element.strArea}</h4>
+        <p>Category: ${element.strCategory}</p>
+        `;
 
-    const btn = document.createElement("button");
-    recipe.appendChild(btn);
-    btn.textContent = "Check recipe";
+        const btn = document.createElement("button");
+        recipe.appendChild(btn);
+        btn.textContent = "Check recipe";
 
-    btn.addEventListener("click", () => {
-      recipePopUp(element);
-    });
+        btn.addEventListener("click", () => {
+          recipePopUp(element);
+        });
 
-    recipeList.appendChild(recipe);
-  });
+        recipeList.appendChild(recipe);
+      });
+    } else {
+      recipeList.innerHTML = "<p>No recipes found. 😔</p>";
+    }
+  } catch (error) {
+    recipeList.innerHTML = "<p>Error fetching data.</p>";
+    console.error("Error fetching data:", error);
+  }
 }
 
 searchBtn.addEventListener("click", () => {
