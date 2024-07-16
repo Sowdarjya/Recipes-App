@@ -64,7 +64,6 @@ async function fetchData(query) {
     }
   } catch (error) {
     recipeList.innerHTML = "<p>Error fetching data.</p>";
-    console.error("Error fetching data:", error);
   }
 }
 
